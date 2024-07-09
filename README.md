@@ -14,7 +14,7 @@ colour = RGB(255,0,255) # Pink
 
 You need to provided a minimum of **__two__** colours to the colour text function, else your gradient will simply not render.
 
-## Displaying colourful text.
+### Displaying colourful text.
 
 When displaying colourful text, we want to ensure that we have all of our colours ready, and the provided text that we want to glamourise.
 
