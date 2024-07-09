@@ -30,3 +30,5 @@ print(colourString("This is what I want to be coloured", [colour1, colour2]))
 ```
 
 This would in turn output the text with a gradient effect on top of it. Please note, you can use more than two colours, infact; there is no limit to how many colours you can use. It is up to you to personalise how you want your text to look with Art.
+
+<img src="https://github.com/mt6x/art/blob/main/output.png">
