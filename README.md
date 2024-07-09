@@ -1,3 +1,4 @@
+
 # ART
 
 Art is a package that allows a user to display colourful text inside of their terminal. It is written in Python, and is very simple to use and fast working.
