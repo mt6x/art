@@ -32,3 +32,18 @@ print(colourString("This is what I want to be coloured", [colour1, colour2]))
 This would in turn output the text with a gradient effect on top of it. Please note, you can use more than two colours, infact; there is no limit to how many colours you can use. It is up to you to personalise how you want your text to look with Art.
 
 <img src="https://github.com/mt6x/art/blob/main/output.png">
+
+```py
+# Define all of our colours.
+colour1 = RGB(255,0,0)
+colour2 = RGB(255,255,75)
+colour3 = RGB(255,255,0)
+colour4 = RGB(0,255,0)
+colour5 = RGB(0,0,255)
+colour6 = RGB(128,0,128)
+
+# Write our text to the terminal.
+print(colourString("This is what I want to be coloured", [colour1, colour2, colour3, colour4, colour5, colour6]))
+```
+
+<img src="https://github.com/mt6x/art/blob/main/output2.png">
