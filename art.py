@@ -7,7 +7,10 @@ class RGB:
     
     # Validate if the colour has been defined properly.
     def valid(self) -> bool:
-        return (self.r > 0 and self.r <= 255) or (self.g > 0 and self.g <= 255) or (self.b > 0 and self.b <= 255)
+        if (self.r > 255 or self.r < 0) or (self.g > 255 or self.g < 0) or (self.b > 255 or self.b < 0):
+            return False
+        
+        return True
     
     # Convert the RGB class into an ANSI escape code.
     def ansi(self) -> str:
