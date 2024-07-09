@@ -26,7 +26,7 @@ def linear_gradient(colours: list, steps: int) -> list:
    for colour in colours:
     try:
         # Check if the current colour is valid.
-        if not colour.valid():
+        if colour.valid() == False:
             return None
     except:
         # The provided item is not an RGB object.
@@ -49,14 +49,18 @@ def linear_gradient(colours: list, steps: int) -> list:
     # Calculate the amount of colour steps per segment.
     stepsPerSegment = steps // segments
 
+    # Calculate the extra steps that will be needed after each segment.
+    remaining = steps % segments
+
     for i in range(segments):
         # Contain the current step value.
-        currentSegment = stepsPerSegment + 1 if i == segments - 1 else stepsPerSegment
+        currentSegment = stepsPerSegment + 1 if i < remaining else stepsPerSegment
 
         for j in range(currentSegment):
+
             # new = start + change * (end - start)
-            output.append(RGB(int(colours[i].r + (j / (currentSegment - 1)) * (colours[i+1].r - colours[i].r)),int(colours[i].g + (j / (currentSegment - 1)) * (colours[i+1].g - colours[i].g)),int(colours[i].b + (j / (currentSegment - 1)) * (colours[i+1].b - colours[i].b))))
-    
+            output.append(RGB(int(colours[i].r + (j / currentSegment) * (colours[i+1].r - colours[i].r)),int(colours[i].g + (j / currentSegment) * (colours[i+1].g - colours[i].g)),int(colours[i].b + (j / currentSegment) * (colours[i+1].b - colours[i].b))))
+
     return output
 
 # Convert a provided string into a gradient string.
