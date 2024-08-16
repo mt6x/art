@@ -57,9 +57,11 @@ def linear_gradient(colours: list, steps: int) -> list:
         currentSegment = stepsPerSegment + 1 if i < remaining else stepsPerSegment
 
         for j in range(currentSegment):
-
+            # Contain the current position in the gradient sequence.
+            position = j / currentSegment
+            
             # new = start + change * (end - start)
-            output.append(RGB(int(colours[i].r + (j / currentSegment) * (colours[i+1].r - colours[i].r)),int(colours[i].g + (j / currentSegment) * (colours[i+1].g - colours[i].g)),int(colours[i].b + (j / currentSegment) * (colours[i+1].b - colours[i].b))))
+            output.append(RGB(int(colours[i].r + position * (colours[i+1].r - colours[i].r)),int(colours[i].g + position * (colours[i+1].g - colours[i].g)),int(colours[i].b + position * (colours[i+1].b - colours[i].b))))
 
     return output
 
