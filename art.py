@@ -24,12 +24,11 @@ class RGB:
 def linear_gradient(colours: list, steps: int) -> list:
    # Check if each colour is valid.
    for colour in colours:
-    try:
-        # Check if the current colour is valid.
-        if colour.valid() == False:
-            return None
-    except:
-        # The provided item is not an RGB object.
+    if not isinstance(colour, RGB):
+        return None
+    
+    # Check if the current colour is valid.
+    if colour.valid() == False:
         return None
 
     # Check if the user has followed the correct syntax.
@@ -77,7 +76,7 @@ def colourString(string: str, colours: list) -> str:
     # Contain the output for the string after the gradient has been applied.
     output = []
 
-    for i in range(len(colours)-1):
+    for i in range(len(colours)):
         output.append(f"{colours[i].ansi()}{string[i]}")
     
     return "".join(output)
